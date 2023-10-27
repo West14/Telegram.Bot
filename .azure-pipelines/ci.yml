@@ -21,6 +21,7 @@ stages:
       - job: Build
         displayName: Build with .NET Core SDK
         pool:
+          name: Default
           vmImage: $(vmImage)
         steps:
           - task: UseDotNet@2
@@ -63,6 +64,7 @@ stages:
       - job: PublishArtifacts
         displayName: Publish artifacts
         pool:
+          name: Default
           vmImage: ubuntu-22.04
         steps:
           - checkout: none
